@@ -1,6 +1,6 @@
 // @ts-check
-import { remote } from 'webdriverio'
-import path from 'path'
+import { remote } from "webdriverio";
+import path from "path";
 
 export default {
     /** @type {import("../types").TcWdioAppiumConfig} */
@@ -147,7 +147,7 @@ export default {
      * that contains menus, toolbars, etc. This can be useful when you need to resize the whole browser window.
      */
     async _resizeWindow(id, width, height, currentWidth, currentHeight) {
-        console.log("_resizeWindow", {id, width, height, currentWidth, currentHeight})
+        console.log("_resizeWindow", {id, width, height, currentWidth, currentHeight});
 
         // implementation based on
         // https://github.com/DevExpress/testcafe-browser-tools/blob/master/src/api/resize.js
