@@ -1,0 +1,34 @@
+{
+  "name": "testcafe-browser-provider-webdriverio-appium",
+  "version": "1.0.0",
+  "description": "WebdriverIO TestCafe browser provider plugin with a focus on Appium.",
+  "main": "lib/index",
+  "files": [
+    "lib",
+    "types"
+  ],
+  "typings": "./types/index.d.ts",
+  "scripts": {
+    "build": "babel --config-file ./babel.json src --out-dir lib",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "testcafe",
+    "browser provider",
+    "plugin"
+  ],
+  "type": "commonjs",
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/cli": "^7.23.9",
+    "@babel/core": "^7.24.0",
+    "@babel/preset-env": "^7.24.0",
+    "appium-chromium-driver": "^1.3.22",
+    "babel-plugin-add-module-exports": "^1.0.4"
+  },
+  "dependencies": {
+    "appium": "^2.5.1",
+    "webdriverio": "^8.34.1"
+  }
+}
