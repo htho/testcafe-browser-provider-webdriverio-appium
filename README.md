@@ -27,42 +27,42 @@ The default export is an object that has the browser-alias as keys and the confi
 ```js
 // @ts-check
 const winServer = {
-    hostname: process.env["APPIUM_MACOS_HOST"] ?? "localhost",
-    port: 4723
+	hostname: process.env["APPIUM_MACOS_HOST"] ?? "localhost",
+	port: 4723,
 };
 const macServer = {
-    hostname: process.env["APPIUM_WIN_HOST"] ?? "localhost",
-    port: 4723
+	hostname: process.env["APPIUM_WIN_HOST"] ?? "localhost",
+	port: 4723,
 };
 
 /** @type {import("testcafe-browser-provider-webdriverio-appium").TcWdioAppiumConfig} */
 export default {
-    "macOS:safari": {
-        ...macServer,
-        capabilities: {
-            "platformName": "Mac",
-            "appium:automationName": "Safari",
-            "browserName": "Safari",
-        }
-    },
-    "iPhoneSE3:safari": {
-        ...macServer,
-        capabilities: {
-            "platformName": "iOS",
-            "appium:automationName": "Safari",
-            "browserName": "Safari",
-            "safari:useSimulator": true,
-            "safari:deviceName": "iPhone SE (3rd generation)",
-        }
-    },
-    "win:chrome": {
-        ...winServer,
-        capabilities: {
-            "platformName": "windows",
-            "browserName": "chrome",
-            "appium:automationName": "Chromium",
-        }
-    },
+	"macOS:safari": {
+		...macServer,
+		capabilities: {
+			"platformName": "Mac",
+			"appium:automationName": "Safari",
+			"browserName": "Safari",
+		},
+	},
+	"iPhoneSE3:safari": {
+		...macServer,
+		capabilities: {
+			"platformName": "iOS",
+			"appium:automationName": "Safari",
+			"browserName": "Safari",
+			"safari:useSimulator": true,
+			"safari:deviceName": "iPhone SE (3rd generation)",
+		},
+	},
+	"win:chrome": {
+		...winServer,
+		capabilities: {
+			"platformName": "windows",
+			"browserName": "chrome",
+			"appium:automationName": "Chromium",
+		},
+	},
 };
 ```
 
@@ -87,22 +87,22 @@ When you use the API, pass the alias to the `browsers()` method:
 
 ```js
 testCafe
-    .createRunner()
-    .src('path/to/test/file.js')
-    .browsers('appium:win:chrome')
-    .run();
+	.createRunner()
+	.src("path/to/test/file.js")
+	.browsers("appium:win:chrome")
+	.run();
 ```
 
 ## Supported/Tested Platforms
 
 testcafe-browser-provider-webdriverio-appium is known to work with:
 
-* Windows
-  * Chrome
-* macOS
-  * Safari
-* iOS (Simulator)
-  * Safari
+- Windows
+  + Chrome
+- macOS
+  + Safari
+- iOS (Simulator)
+  + Safari
 
 Other devices platforms will probably work, but I did not test them yet.
 
@@ -133,13 +133,13 @@ Remember that for [Safari you still need to activate the WebDriver in macOS](htt
 
 ```json
 {
-  "dependencies": {
-    "appium": "^2.5.1",
-    "appium-chromium-driver": "^1.3.20",
-    "appium-safari-driver": "^3.5.11"
-  },
-  "scripts": {
-    "start": "appium"
-  }
+	"dependencies": {
+		"appium": "^2.5.1",
+		"appium-chromium-driver": "^1.3.20",
+		"appium-safari-driver": "^3.5.11"
+	},
+	"scripts": {
+		"start": "appium"
+	}
 }
 ```
