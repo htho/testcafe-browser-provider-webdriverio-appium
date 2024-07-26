@@ -157,7 +157,7 @@ You can list the browsers available. (These are the keys defined in the default 
 "webdriverio-appium:iPhoneSE3:safari:safari-driver"
 "webdriverio-appium:iPad6:safari"
 "webdriverio-appium:iPad6:safari:safari-driver"
-"webdriverio-appium:iPad10:safari"
+"webdriverio-appium:iPadRealDevice:safari"
 "webdriverio-appium:win:chrome"
 "webdriverio-appium:local:chrome"
 "webdriverio-appium:local:chrome:headless"
