@@ -6,7 +6,7 @@ export default {
 	/** @type {import("../types").TcWdioAppiumConfig} */
 	_config: {},
 
-	/** @type {Record<string, WebdriverIO.Browser & {requestedCapabilities: import("../types").TcWdioAppiumOptions}>} */
+	/** @type {Record<string, WebdriverIO.Browser & {requestedCapabilities: import("../types").TcWdioAppiumSpecificOptions}>} */
 	_browser: {},
 
 	/** Multiple browsers support */

@@ -26,10 +26,17 @@ The default export is an object that has the browser-alias as keys and the confi
 
 ```js
 // @ts-check
+/** @type {Partial<import("testcafe-browser-provider-webdriverio-appium").TcWdioAppiumOptions>} */
+const common = {
+	logLevel: "warn",
+};
+
+/** @type {Partial<import("testcafe-browser-provider-webdriverio-appium").TcWdioAppiumOptions>} */
 const winServer = {
 	hostname: process.env["APPIUM_MACOS_HOST"] ?? "localhost",
 	port: 4723,
 };
+/** @type {Partial<import("testcafe-browser-provider-webdriverio-appium").TcWdioAppiumOptions>} */
 const macServer = {
 	hostname: process.env["APPIUM_WIN_HOST"] ?? "localhost",
 	port: 4723,
@@ -38,6 +45,7 @@ const macServer = {
 /** @type {import("testcafe-browser-provider-webdriverio-appium").TcWdioAppiumConfig} */
 export default {
 		"Mac:safari": {
+		...common,
 		...macServer,
 		capabilities: {
 			"appium:automationName": "Safari",
@@ -48,6 +56,7 @@ export default {
 	},
 
 	"iPhoneSE3:safari": {
+		...common,
 		...macServer,
 		capabilities: {
 			"appium:automationName": "xcuitest",
@@ -60,6 +69,7 @@ export default {
 	},
 
 	"iPhoneSE3:safari:safari-driver": {
+		...common,
 		...macServer,
 		capabilities: {
 			"appium:automationName": "Safari",
@@ -73,6 +83,7 @@ export default {
 	},
 
 	"iPad6:safari": {
+		...common,
 		...macServer,
 		capabilities: {
 			"appium:automationName": "xcuitest",
@@ -85,6 +96,7 @@ export default {
 	},
 
 	"iPad6:safari:safari-driver": {
+		...common,
 		...macServer,
 		capabilities: {
 			"appium:automationName": "Safari",
@@ -99,6 +111,7 @@ export default {
 	},
 
 	"iPadRealDevice:safari:safari-driver": {
+		...common,
 		...macServer,
 		capabilities: {
 			"appium:automationName": "Safari",
@@ -112,6 +125,7 @@ export default {
 	},
 
 	"win:chrome": {
+		...common,
 		...winServer,
 		capabilities: {
 			"appium:automationName": "Chromium",
@@ -123,12 +137,14 @@ export default {
 
 	/** does not use Appium */
 	"local:chrome": {
+		...common,
 		capabilities: {
 			browserName: "chrome",
 		},
 	},
 	/** does not use Appium */
 	"local:chrome:headless": {
+		...common,
 		capabilities: {
 			"browserName": "chrome",
 			"goog:chromeOptions": {

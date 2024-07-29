@@ -1,6 +1,6 @@
 {
   "name": "testcafe-browser-provider-webdriverio-appium",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "WebdriverIO TestCafe browser provider plugin with a focus on Appium.",
   "main": "lib/index",
   "files": [

@@ -2,7 +2,7 @@ import { RemoteOptions } from "webdriverio";
 import { SafariCapabilities } from "./safari";
 
 export type ResizeStrategies = "setWindowSize" | "rotateDevice" | "setOrientation";
-export type TcWdioAppiumOptions = {
+export type TcWdioAppiumSpecificOptions = {
 	/**
 	 * On mobile devices, there is no window to resize.
 	 * If width >= height, the window/device is in landscape mode, portait otherwise.
@@ -17,6 +17,8 @@ export type TcWdioAppiumOptions = {
 
 type SafariRemoteOptions = RemoteOptions & {capabilities: SafariCapabilities};
 
+export type TcWdioAppiumOptions = TcWdioAppiumSpecificOptions & (RemoteOptions | SafariRemoteOptions)
+
 export type TcWdioAppiumConfig = {
-	[name: string]: TcWdioAppiumOptions & (RemoteOptions | SafariRemoteOptions),
+	[name: string]: TcWdioAppiumOptions,
 };
